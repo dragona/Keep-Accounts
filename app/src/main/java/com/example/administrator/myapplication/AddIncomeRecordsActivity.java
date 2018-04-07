@@ -45,11 +45,9 @@ public class AddIncomeRecordsActivity extends AppCompatActivity {
     }
 
     public void clk_spending(View view) {
-        //to do when the button is clicked
-        Intent itent = new Intent();
-        itent.setClass(AddIncomeRecordsActivity.this, AddSpendingRecordsActivity.class);
-        startActivity(itent);
-        AddIncomeRecordsActivity.this.finish();
+
+        startActivity(new Intent(this, AddSpendingRecordsActivity.class));
+        finish();
     }
 
     public void clk_cancel(View view) {
@@ -59,7 +57,7 @@ public class AddIncomeRecordsActivity extends AppCompatActivity {
     public void clk_ok(View view) {
         //add to the database, then close this activity
 
-        String type = (findViewById(R.id.btn_selected)).getContentDescription().toString();
+        String type = ((ImageButton) findViewById(R.id.btn_selected)).getContentDescription().toString();
         DateFormat formatter = new SimpleDateFormat("YYYY-MM-DD HH:MM:SS.SSS");
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
@@ -76,14 +74,14 @@ public class AddIncomeRecordsActivity extends AppCompatActivity {
         //close this activity
         MainActivity.instance.recreate();
 
-        AddIncomeRecordsActivity.this.finish();
+        finish();
     }
 
     public void clk_select(View view) {
         ImageButton imageButtonSelect = (ImageButton) view;
         imageButtonSelect.setImageResource(imageIdUseMulticolor[(Integer.valueOf(view.getTag().toString()))]);
 
-        ImageButton imageButtonShow = findViewById(R.id.btn_selected);
+        ImageButton imageButtonShow = (ImageButton) findViewById(R.id.btn_selected);
         imageButtonShow.setImageResource(imageIdUseMulticolor[(Integer.valueOf(view.getTag().toString()))]);
         imageButtonShow.setContentDescription(imageButtonSelect.getContentDescription());
 

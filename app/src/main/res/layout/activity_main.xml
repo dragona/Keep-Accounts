@@ -14,25 +14,27 @@
 
         <ImageButton
             android:id="@+id/btn_graph"
-            android:background="@drawable/button_selector"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/btn_QRcode"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:background="@drawable/button_selector"
+            android:onClick="btnSpendingPieChart"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/pie_chart" />
 
         <ImageButton
             android:id="@+id/btn_QRcode"
-            android:background="@drawable/button_selector"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:background="@drawable/button_selector"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/qr" />
+
         <Button
             android:id="@+id/btn_total_money"
             style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -40,37 +42,41 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="1000"
-            android:textSize="50sp"/>
+            android:textSize="50sp" />
+
         <TextView
             android:id="@+id/tv_month_income_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_total_money"
             android:layout_marginLeft="50dp"
-            android:text="March Income"/>
+            android:text="March Income" />
+
         <TextView
             android:id="@+id/tv_month_income"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_month_income_name"
             android:layout_marginLeft="70dp"
-            android:text="2000"/>
+            android:text="2000" />
+
         <TextView
             android:id="@+id/tv_month_spending_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_total_money"
             android:layout_alignParentRight="true"
+            android:layout_below="@id/btn_total_money"
             android:layout_marginRight="50dp"
-            android:text="March Spending"/>
+            android:text="March Spending" />
+
         <TextView
             android:id="@+id/tv_month_spend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_month_spending_name"
             android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_month_spending_name"
             android:layout_marginRight="90dp"
-            android:text="1000"/>
+            android:text="1000" />
 
     </RelativeLayout>
 
@@ -78,10 +84,12 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="12">
+
         <ListView
             android:id="@+id/listView_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
+
         </ListView>
     </LinearLayout>
 
@@ -92,11 +100,11 @@
 
         <ImageButton
             android:id="@+id/button_add_records"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:background="@null"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
-            style="@style/Widget.AppCompat.Button.Borderless"
             android:onClick="btnAddSpendingRecords"
             android:scaleType="fitCenter"
             android:src="@drawable/add" />

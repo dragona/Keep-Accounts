@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnAddSpendingRecords(View view) {
         //to do when the button is clicked
-        startActivity(new Intent(MainActivity.this, AddSpendingRecordsActivity.class));
+        startActivity(new Intent(this, AddSpendingRecordsActivity.class));
     }
 
     public int getIdSpending(String type) {
@@ -169,5 +169,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return id;
+    }
+
+    public void btnSpendingPieChart(View view) {
+        //to do when the button is clicked
+        startActivity(new Intent(this, SpendingPieChartActivity.class));
     }
 }
